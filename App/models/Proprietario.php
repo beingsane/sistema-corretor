@@ -65,6 +65,17 @@ class Proprietario extends Model {
         } else {
             return "Erro ao cadastrar";
         }
+    }
 
+    public function deletar($id) {
+        $sql = "DELETE FROM proprietarios WHERE id = ?";
+        $stmt = Model::getConn()->prepare($sql);
+        $stmt->bindValue(1, $id);
+
+        if($stmt->execute()) {
+            return 'Excluído com sucesso!';
+        } else {
+            return 'Erro ao excluir!';
+        }
     }
 }

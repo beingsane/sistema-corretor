@@ -57,7 +57,7 @@
                             <td>
                               <a class="btn btn-info" href="/proprietarios/detalhes/<?php echo $proprietario['id'] ?>"><i class="fa fa-search"></i></a>     
                               <a class="btn btn-primary" href="#"><i class="fa fa-edit"></i></a> 
-                              <a class="btn btn-danger" href="#"><i class="fa fa-trash"></i></a> 
+                              <a class="btn btn-danger" data-href="/proprietarios/deletar/<?php echo $proprietario['id'] ?>" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash"></i></a> 
                             </td>
                         </tr>
                     <?php } ?>
@@ -67,3 +67,28 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Você deseja realmente deletar?
+            </div>
+            <div class="modal-body">
+                Não será possivel desfazer a ação.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-danger btn-ok">Deletar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+$('#confirm-delete').on('show.bs.modal', function(e) {
+    $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+});
+</script>

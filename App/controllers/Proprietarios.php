@@ -80,5 +80,19 @@ class Proprietarios extends Controller {
         $this->view('/sistema/proprietarios/listagem', $dados = ['mensagem' => $mensagem, 'registros' => $registros]);
     }
 
+    public function deletar($id) {
+
+        Auth::checkLogin();
+
+        $mensagem = array();
+
+        $proprietario = $this->model('Proprietario');
+
+        $mensagem[] = $proprietario->deletar($id);
+
+        $dados = $proprietario->listarTodos();
+
+        $this->view('/sistema/proprietarios/listagem', $dados = ['mensagem' => $mensagem, 'registros' => $dados]);
+    }
 
 }
