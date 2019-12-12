@@ -7,7 +7,7 @@
 
     <?php if(!empty($data['mensagem'])) {
 	    foreach($data['mensagem'] as $m) {
-		    echo $m."<br>";
+		    echo "<div class='alert alert-success' role='alert'>".$m."</div>". "<br/> <br/>";
 	  }
     } 
     ?>

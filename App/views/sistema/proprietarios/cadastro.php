@@ -13,7 +13,7 @@
 
     <br />
     <div class="container">
-        <form action="proprietarios/cadastro" method="POST">
+        <form action="/proprietarios/salvar" method="POST">
             <div class="form-group">
                 <label for="nome">Nome</label>
                 <input type="text" class="form-control" name="nome" placeholder="Nome" required>
@@ -54,19 +54,19 @@
 
             <div class="form-group">
                 <label for="endereco">Endereço</label>
-                <input type="text" class="form-control" name="endereco" placeholder="Endereço">
+                <input type="text" class="form-control" name="endereco" placeholder="Endereço" required>
             </div>
 
             <div class="form-group">
                 <label for="bairro">Bairro</label>
-                <input type="text" class="form-control" name="bairro" placeholder="Bairro">
+                <input type="text" class="form-control" name="bairro" placeholder="Bairro" required>
             </div>
 
             <div class="form-group">
                 <label for="numero">Número</label>
-                <input type="number" class="form-control" name="numero" placeholder="Número">
+                <input type="number" class="form-control" name="numero" placeholder="Número" required>
             </div>
-            <button name="cadastrar" class="btn btn-primary btn-cadastro-form">Cadastrar</button>
+            <button type="submit" name="cadastrar" class="btn btn-primary btn-cadastro-form">Cadastrar</button>
         </form>
     </div>
 </div>

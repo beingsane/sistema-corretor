@@ -3,6 +3,18 @@
 use \App\Core\Model;
 
 class Proprietario extends Model {
+
+    public $nome;
+    public $sobrenome;
+    public $cpf;
+    public $telefone;
+    public $telefone2;
+    public $email;
+    public $estado;
+    public $cidade;
+    public $endereco;
+    public $bairro;
+    public $numero;
     
     public function listarTodos() {
         $sql = "SELECT * FROM proprietarios";
@@ -15,5 +27,30 @@ class Proprietario extends Model {
         } else {
             return [];
         }
+    }
+
+    public function cadastrar() {
+        $sql = "INSERT INTO proprietarios (nome, sobrenome, cpf, telefone, telefone2, email, estado, cidade, endereco,
+        bairro, numero) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = Model::getConn()->prepare($sql);
+        
+        $stmt->bindValue(1, $this->nome);
+        $stmt->bindValue(2, $this->sobrenome);
+        $stmt->bindValue(3, $this->cpf);
+        $stmt->bindValue(4, $this->telefone);
+        $stmt->bindValue(5, $this->telefone2);
+        $stmt->bindValue(6, $this->email);
+        $stmt->bindValue(7, $this->estado);
+        $stmt->bindValue(8, $this->cidade);
+        $stmt->bindValue(9, $this->endereco);
+        $stmt->bindValue(10, $this->bairro);
+        $stmt->bindValue(11, $this->numero);
+
+        if($stmt->execute()) {
+            return "Cadastrado com sucesso!";
+        } else {
+            return "Erro ao cadastrar";
+        }
+
     }
 }
