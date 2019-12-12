@@ -21,7 +21,7 @@
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Pesquisar por nome">
                     <div class="input-group-append">
-                        <button class="btn btn-secondary" type="button">
+                        <button class="btn btn-primary" type="button">
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
@@ -55,9 +55,9 @@
                             <td><?php echo $proprietario['cpf']; ?></td>
                             <td><?php echo $proprietario['telefone']; ?></td>
                             <td>
-                              <button class="btn btn-info" href="#"><i class="fa fa-search"></i></button>     
-                              <button class="btn btn-primary" href="#"><i class="fa fa-edit"></i></button> 
-                              <button class="btn btn-danger" href="#"><i class="fa fa-trash"></i></button> 
+                              <a class="btn btn-info" href="/proprietarios/detalhes/<?php echo $proprietario['id'] ?>"><i class="fa fa-search"></i></a>     
+                              <a class="btn btn-primary" href="#"><i class="fa fa-edit"></i></a> 
+                              <a class="btn btn-danger" href="#"><i class="fa fa-trash"></i></a> 
                             </td>
                         </tr>
                     <?php } ?>

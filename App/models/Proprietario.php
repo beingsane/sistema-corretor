@@ -29,11 +29,25 @@ class Proprietario extends Model {
         }
     }
 
+    public function listarUm($id) {
+        $sql = "SELECT * FROM proprietarios WHERE id = ?";
+        $stmt = Model::getConn()->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+
+        if($stmt->rowCount() > 0) {
+            $resultado = $stmt->fetch(\PDO::FETCH_ASSOC);
+            return $resultado;
+        } else {
+            return [];
+        }
+    }
+
     public function cadastrar() {
         $sql = "INSERT INTO proprietarios (nome, sobrenome, cpf, telefone, telefone2, email, estado, cidade, endereco,
         bairro, numero) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = Model::getConn()->prepare($sql);
-        
+
         $stmt->bindValue(1, $this->nome);
         $stmt->bindValue(2, $this->sobrenome);
         $stmt->bindValue(3, $this->cpf);

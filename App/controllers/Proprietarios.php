@@ -21,9 +21,18 @@ class Proprietarios extends Controller {
 
         $mensagem = array();
 
-        
-
         $this->view('/sistema/proprietarios/cadastro', $dados = ['mensagem' => $mensagem]);
+    }
+
+    public function detalhes($id) {
+
+        Auth::checkLogin();
+
+        $proprietario = $this->model('Proprietario');
+        
+        $dados = $proprietario->listarUm($id);
+
+        $this->view('/sistema/proprietarios/detalhes', $dados);
     }
 
     public function salvar() {
