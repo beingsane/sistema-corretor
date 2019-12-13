@@ -56,7 +56,7 @@
                             <td><?php echo $proprietario['telefone']; ?></td>
                             <td>
                               <a class="btn btn-info" href="/proprietarios/detalhes/<?php echo $proprietario['id'] ?>"><i class="fa fa-search"></i></a>     
-                              <a class="btn btn-primary" href="#"><i class="fa fa-edit"></i></a> 
+                              <a class="btn btn-primary" href="/proprietarios/editar/<?php echo $proprietario['id'] ?>"><i class="fa fa-edit"></i></a> 
                               <a class="btn btn-danger" data-href="/proprietarios/deletar/<?php echo $proprietario['id'] ?>" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash"></i></a> 
                             </td>
                         </tr>
@@ -78,7 +78,7 @@
                 Não será possivel desfazer a ação.
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                 <a class="btn btn-danger btn-ok">Deletar</a>
             </div>
         </div>
