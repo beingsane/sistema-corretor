@@ -24,15 +24,15 @@
             </div>
             <div class="form-group">
                 <label for="cpf">CPF</label>
-                <input type="text" class="form-control" name="cpf" placeholder="CPF" required>
+                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" required>
             </div>
             <div class="form-group">
                 <label for="telefone">Telefone</label>
-                <input type="text" class="form-control" name="telefone" placeholder="Telefone" required>
+                <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone" required>
             </div>
             <div class="form-group">
                 <label for="telefone2">Telefone 2</label>
-                <input type="text" class="form-control" name="telefone2" placeholder="Telefone 2">
+                <input type="text" class="form-control" id="telefone2" name="telefone2" placeholder="Telefone 2">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
@@ -81,7 +81,8 @@
 		}); 
 	}
   $(document).ready(function($){
-    $('.input_telefone').mask('(00) 00000-0000');
-    $('#input_cpf').mask('000.000.000-00');
+    $('#telefone').mask('(00) 00000-0000');
+    $('#telefone2').mask('(00) 00000-0000');
+    $('#cpf').mask('000.000.000-00');
   });
 </script>

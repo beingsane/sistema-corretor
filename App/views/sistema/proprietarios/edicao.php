@@ -26,17 +26,17 @@
             </div>
             <div class="form-group">
                 <label for="cpf">CPF</label>
-                <input type="text" class="form-control" name="cpf" placeholder="CPF" value="<?php echo $data['cpf'] ?>"
+                <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF" value="<?php echo $data['cpf'] ?>"
                     required>
             </div>
             <div class="form-group">
                 <label for="telefone">Telefone</label>
-                <input type="text" class="form-control" name="telefone" placeholder="Telefone"
+                <input type="text" class="form-control" name="telefone" id="telefone" placeholder="Telefone"
                     value="<?php echo $data['telefone'] ?>" required>
             </div>
             <div class="form-group">
                 <label for="telefone2">Telefone 2</label>
-                <input type="text" class="form-control" name="telefone2" placeholder="Telefone 2"
+                <input type="text" class="form-control" name="telefone2" id="telefone2" placeholder="Telefone 2"
                     value="<?php echo $data['telefone2'] ?>">
             </div>
             <div class="form-group">
@@ -88,7 +88,8 @@
 		}); 
 	}
   $(document).ready(function($){
-    $('.input_telefone').mask('(00) 00000-0000');
-    $('#input_cpf').mask('000.000.000-00');
+    $('#telefone').mask('(00) 00000-0000');
+    $('#telefone2').mask('(00) 00000-0000');
+    $('#cpf').mask('000.000.000-00');
   });
 </script>
