@@ -1,8 +1,13 @@
 <div class="container-fluid">
 <div class="container wrapper">
+
 	<div class="row">
 		<div class="col-sm">
+		
 			<form action="/home/login" method="POST" class="form-login">
+			<img src="/img/img-login.png" class="img-fluid img-login mx-auto d-block">
+			<br/>
+
 				<h5 class="form-login-cabecalho">Autentique-se para continuar!</h5>
 				  
 				<div class="form-group">

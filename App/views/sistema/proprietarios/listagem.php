@@ -17,11 +17,11 @@
             <a href="/proprietarios/cadastro" class="btn btn-primary btn-cadastro-tabela btn-lg"><i class="fas fa-plus"> Novo Proprietário</i></a>
         </div>
         <div class="col-6">
-            <form action="#" method="GET">
+            <form action="/proprietarios/filtroNome" method="POST">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Pesquisar por nome">
+                    <input type="text" class="form-control" name="nome" placeholder="Pesquisar por nome">
                     <div class="input-group-append">
-                        <button class="btn btn-primary" type="button">
+                        <button class="btn btn-primary" type="submit">
                             <i class="fas fa-search"></i>
                         </button>
                     </div>

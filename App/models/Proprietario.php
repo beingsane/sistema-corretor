@@ -29,6 +29,20 @@ class Proprietario extends Model {
         }
     }
 
+    public function buscar($search) {
+        $sql = "SELECT * FROM proprietarios WHERE nome LIKE '%' ? '%' ";
+        $stmt = Model::getConn()->prepare($sql);
+        $stmt->bindValue(1, $search);
+        $stmt->execute();
+
+        if($stmt->rowCount() > 0) {
+            $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            return $resultado;
+        } else {
+            return [];
+        }
+    }
+
     public function listarUm($id) {
         $sql = "SELECT * FROM proprietarios WHERE id = ?";
         $stmt = Model::getConn()->prepare($sql);

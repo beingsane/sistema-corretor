@@ -12,7 +12,22 @@ class Proprietarios extends Controller {
         $proprietarios = $this->model('Proprietario');
         $dados = $proprietarios->listarTodos();
 
-        $this->view('sistema/proprietarios/listagem', $dados = ['registros' => $dados]);
+        $this->view('/sistema/proprietarios/listagem', $dados = ['registros' => $dados]);
+    }
+
+    public function filtroNome() {
+
+        Auth::checkLogin();
+
+        $mensagem = array();
+
+        $search = $_POST['nome'];
+
+        $proprietarios = $this->model('Proprietario');
+        $dados = $proprietarios->buscar($search);
+
+
+        $this->view("/sistema/proprietarios/listagem", $dados = ['registros' => $dados]);
     }
 
     public function cadastro() {
